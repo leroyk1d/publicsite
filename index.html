@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структура сайту з CSS Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-globe"></i> Мій Веб-Сайт</h1>
+            <nav>
+                <a href="#"><i class="fas fa-home"></i> Головна</a>
+                <a href="#"><i class="fas fa-info-circle"></i> Про нас</a>
+                <a href="#"><i class="fas fa-briefcase"></i> Послуги</a>
+                <a href="#"><i class="fas fa-envelope"></i> Контакти</a>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <h2><i class="fas fa-th-list"></i> Меню</h2>
+            <ul>
+                <li><a href="#"><i class="fas fa-newspaper"></i> Новини</a></li>
+                <li><a href="#"><i class="fas fa-images"></i> Галерея</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> Відео</a></li>
+                <li><a href="#"><i class="fas fa-music"></i> Музика</a></li>
+                <li><a href="#"><i class="fas fa-download"></i> Завантаження</a></li>
+            </ul>
+            
+            <div class="animation-box">
+                <div class="spinner">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <p>Анімація завантаження</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <article class="post">
+                <h2><i class="fas fa-star"></i> Основна стаття</h2>
+                <p>Це головний вміст веб-сайту. Тут може розміщуватися довільний контент: текст, зображення, відео чи анімації.</p>
+                
+                <div class="gallery">
+                    <div class="image-box">
+                        <i class="fas fa-mountain"></i>
+                        <p>Гори</p>
+                    </div>
+                    <div class="image-box">
+                        <i class="fas fa-water"></i>
+                        <p>Океан</p>
+                    </div>
+                    <div class="image-box">
+                        <i class="fas fa-city"></i>
+                        <p>Місто</p>
+                    </div>
+                </div>
+                
+                <p>CSS Grid дозволяє легко створювати складні макети веб-сторінок. Це потужний інструмент для верстки, який підтримується всіма сучасними браузерами.</p>
+            </article>
+            
+            <article class="post">
+                <h2><i class="fas fa-chart-line"></i> Статистика</h2>
+                <p>Ось деякі дані, представлені у вигляді графіки:</p>
+                
+                <div class="stats">
+                    <div class="stat-bar" style="height: 80%; background-color: #3498db;">
+                        <span>80%</span>
+                    </div>
+                    <div class="stat-bar" style="height: 60%; background-color: #2ecc71;">
+                        <span>60%</span>
+                    </div>
+                    <div class="stat-bar" style="height: 90%; background-color: #e74c3c;">
+                        <span>90%</span>
+                    </div>
+                    <div class="stat-bar" style="height: 70%; background-color: #f39c12;">
+                        <span>70%</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <aside class="ads">
+            <h2><i class="fas fa-ad"></i> Реклама</h2>
+            <div class="ad-box">
+                <h3>Спеціальна пропозиція!</h3>
+                <p>Знижка 20% на всі послуги</p>
+                <div class="ad-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+            </div>
+            
+            <div class="ad-box">
+                <h3>Новинка</h3>
+                <p>Спробуйте наш новий продукт</p>
+                <div class="pulse-animation">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+            
+            <div class="ad-box">
+                <h3>Підпишіться</h3>
+                <p>Отримуйте новини першими</p>
+                <button class="subscribe-btn">Підписатися</button>
+            </div>
+        </aside>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Контакти</h3>
+                    <p>м. Київ, вул. Прикладна, 10</p>
+                    <p>+380 44 123 45 67</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Соцмережі</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-copyright"></i> Права</h3>
+                    <p>&copy; 2023 Мій Веб-Сайт. Всі права захищені.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Проста анімація для кнопки підписки
+        document.querySelector('.subscribe-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-check"></i> Підписано!';
+            this.style.backgroundColor = '#2ecc71';
+            
+            setTimeout(() => {
+                this.innerHTML = 'Підписатися';
+                this.style.backgroundColor = '#e74c3c';
+            }, 2000);
+        });
+        
+        // Анімація для статистичних стовпців
+        document.querySelectorAll('.stat-bar').forEach((bar, index) => {
+            setTimeout(() => {
+                bar.style.width = bar.style.height;
+            }, index * 300);
+        });
+    </script>
+</body>
+</html>
